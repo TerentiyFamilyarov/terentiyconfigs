@@ -60,7 +60,7 @@ seat seat0 xcursor_theme $cursor_theme $cursor_size
 ### Output configuration
 #
 # Default wallpaper available in /usr/share/backgrounds/sway/
-    output * bg ./moon-mountains.tif fill
+    output * bg ./moon-mountains.jpg fill
 # output * bg $color_background solid_color
 #
 # Example configuration:
