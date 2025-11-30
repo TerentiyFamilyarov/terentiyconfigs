@@ -1,0 +1,68 @@
+/* Wofi style */
+/* Wofi simplified style with color variables */
+@define-color black #1c1c1c;
+@define-color lightblack #262626;
+@define-color gray #4e4e4e;
+@define-color gray1 #686868;
+@define-color gray2 #b8b8b8;
+@define-color white1 #e8e8e8;
+@define-color white #fafafa;
+@define-color yellow #d7af87;
+@define-color orange #cc9057;
+@define-color red #c4746e;
+@define-color magenta #a58aac;
+@define-color blue #8aacbd;
+@define-color cyan #4a716e;
+@define-color green #89b379;
+
+window {
+    margin: 5px;
+    border: 3px solid @cyan;
+    background-color: @black;
+}
+
+#input {
+    margin: 10px;
+    padding: 8px;
+    border-radius: 0;
+    border: 3px solid @gray1;
+    background-color: @lightblack;
+    color: @white;
+    font-size: 14px;
+}
+
+#input:focus {
+    border-color: @blue;
+}
+
+#inner-box, #outer-box, #scroll {
+    margin: 5px;
+    border: none;
+    background-color: @black;
+}
+
+#text {
+    margin: 5px;
+    border: none;
+    color: @white1;
+    font-size: 14px;
+}
+
+#entry {
+    margin: 2px;
+    border: none;
+    background-color: @black;
+}
+
+#entry:nth-child(odd) {
+    background-color: @lightblack;
+}
+
+#entry:selected, #entry:nth-child(odd):selected {
+    background-color: @gray;
+    border: 3px solid @blue;
+}
+
+#entry:selected #text {
+    color: @white;
+}

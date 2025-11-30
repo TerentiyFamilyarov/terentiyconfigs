@@ -1,0 +1,148 @@
+{
+    "position": "top", 
+    "height": 30, 
+    "spacing": 4, // Gaps between modules (4px)
+    "modules-left": [
+        "sway/workspaces",
+        "tray",
+        "sway/mode"
+    ],
+    "modules-center": [
+      "clock",
+      "sway/language",
+      "sway/scratchpad"
+
+    ],
+    "modules-right": [
+        "mpd",
+        "network",
+        "cpu",
+        "memory",
+        "pulseaudio",
+        "backlight",
+        "battery",
+        "battery#bat2"
+    ],
+    
+    // Modules configuration
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10"
+
+        }
+    },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "lkd",
+            "unlocked": "unlkd"
+        }
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", "min:"],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 5,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "off",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip":false,
+        "format": "{:%Y-%m-%d | %H:%M}"
+    },
+    "cpu": {
+        "format": "cpu: {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "mem: {}%"
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "bright: {percent}%"
+    },
+    "battery": {
+        "states": {
+            "full": 99,
+            "good": 79,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "bat: {capacity}%",
+        "format-full": "full-bat: {capacity}%",
+        "format-good": "bat: {capacity}%", // An empty format will hide the module
+        "format-charging": "bat++: {capacity}%",
+        "format-plugged": "ac-bat: {capacity}%",
+        "format-alt": "time-bat: {time}"
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "net: {essid}({signalStrength}%) {bandwidthDownBits}",
+        "format-ethernet": "eth-net: {ipaddr}/{cidr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "!disconnected!",
+        "format-alt": "{ifname}: {bandwidthDownBits}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "vol: {volume}% | {format_source}",
+        "format-bluetooth": "bluez[{format}]",
+        "format-bluetooth-muted": "bluez[{format}]",
+        "format-muted": "vol: - | {format_source}",
+        "format-source": "mic: {volume}%",
+        "format-source-muted": "mic: -"
+        },
+        "on-click": "pavucontrol"
+    }
+
+}
