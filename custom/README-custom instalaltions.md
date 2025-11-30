@@ -44,7 +44,7 @@ step by step:
 
 options="LogOut\nReboot\nPoweroff\nSuspend\nLock"
 
-selected=$(echo -e "$options" | wofi --dmenu --prompt="Действие:")
+selected=$(echo -e "$options" | wofi --dmenu --prompt="Action:")
 
 case $selected in
     "LogOut")
