@@ -12,7 +12,7 @@ sudo pacman -S wl-clipboard unzip
 ```
 ### workstation
 ```bash
-sudo pacman -S waybar otf-font-awesome ttf-jetbrains-mono-nerd pipewire pipewire-pulse pipewire-jack pavucontrol adw-gtk-theme adwaita-icon-theme lxqt-openssh-askpass wofi libnotify
+sudo pacman -S waybar otf-font-awesome ttf-jetbrains-mono-nerd pipewire pipewire-pulse pipewire-jack pavucontrol adw-gtk-theme adwaita-icon-theme lxqt-openssh-askpass wofi libnotify acpi
 ```
 
 ## Pipewire
