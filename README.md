@@ -25,7 +25,7 @@ uses for backgorund
 ###### lightblack #262626
 uses for background-2
 ###### gray #4e4e4e
-mostle for borders
+mostly for borders
 ###### gray1 #686868
 selected item borders
 ###### gray2 #b8b8b8
@@ -35,7 +35,7 @@ mostly for text color
 ###### white #fafafa
 for bright text color
 ###### yellow #d7af87
--
+`-
 ###### orange #cc9057
 warning
 ###### red #c4746e
