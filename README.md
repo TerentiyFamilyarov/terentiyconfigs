@@ -1,15 +1,15 @@
-### configs for sway, waybar, swaylock, nvim..etc
+# configs for sway, waybar, swaylock, nvim..etc
 
 i use us,ru langs, so add this in /etc/locale.gen and run 
 ```bash
 sudo locale-gen
 ``` 
 
-##### Requires:
+## Requires:
 ```bash
 sudo pacman -S waybar otf-font-awesome ttf-jetbrains-mono-nerd pipewire pipewire-pulse pipewire-jack pavucontrol adw-gtk-theme adwaita-icon-theme lxqt-openssh-askpass wofi
 ```
-##### Pipewire
+## Pipewire
 start and enable pipewire:
 ```bash
 systemctl --user enable pipewire.service
@@ -19,32 +19,32 @@ systemctl --user start pipewire-pulse.service
 ```
 also see instalation.md in custom for custom settings as powermenu and env variables
 
-##### Colorsheme
-###### black #1c1c1c
+## Colorsheme
+### black #1c1c1c
 uses for backgorund
-###### lightblack #262626
+### lightblack #262626
 uses for background-2
-###### gray #4e4e4e
+### gray #4e4e4e
 mostly for borders
-###### gray1 #686868
+### gray1 #686868
 selected item borders
-###### gray2 #b8b8b8
+### gray2 #b8b8b8
 why not
-###### white1 #e8e8e8
+### white1 #e8e8e8
 mostly for text color
-###### white #fafafa
+### white #fafafa
 for bright text color
-###### yellow #d7af87
+### yellow #d7af87
 `-
-###### orange #cc9057
+### orange #cc9057
 warning
-###### red #c4746e
+### red #c4746e
 critical
-###### magenta #a58aac
+### magenta #a58aac
 over, specital, rare using
-###### blue #8aacbd
+### blue #8aacbd
 selected item border
-###### cyan #4a716e
+### cyan #4a716e
 active window
 ###### green #89b379
 good, charging bat
