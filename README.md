@@ -12,7 +12,7 @@ sudo pacman -S wl-clipboard unzip
 ```
 ### workstation
 ```bash
-sudo pacman -S waybar otf-font-awesome ttf-jetbrains-mono-nerd pipewire pipewire-pulse pipewire-jack pavucontrol adw-gtk-theme adwaita-icon-theme lxqt-openssh-askpass wofi libnotify upower mako
+sudo pacman -S waybar otf-font-awesome ttf-jetbrains-mono-nerd pipewire pipewire-pulse pipewire-jack pavucontrol adw-gtk-theme adwaita-icon-theme lxqt-openssh-askpass wofi upower mako libnotify
 ```
 ## instalation
 move this wolders to your .config,
