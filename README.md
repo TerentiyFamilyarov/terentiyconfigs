@@ -12,8 +12,14 @@ sudo pacman -S wl-clipboard unzip
 ```
 ### workstation
 ```bash
-sudo pacman -S waybar otf-font-awesome ttf-jetbrains-mono-nerd pipewire pipewire-pulse pipewire-jack pavucontrol adw-gtk-theme adwaita-icon-theme lxqt-openssh-askpass wofi upower mako libnotify
+sudo pacman -S waybar otf-font-awesome ttf-jetbrains-mono-nerd pipewire pipewire-pulse pipewire-jack pavucontrol adw-gtk-theme adwaita-icon-theme lxqt-openssh-askpass wofi upower mako libnotify grim slurp libreoffice-fresh brightnessctl
 ```
+### apps
+appsfor: imageviewer fliemanager texteditor arhivetool calculator
+```bash
+sudo pacman -S gpicview pcmanfm geany engrampa calc
+```
+
 ## instalation
 move this wolders to your .config,
 but for custom folder read README, its in custom folder
