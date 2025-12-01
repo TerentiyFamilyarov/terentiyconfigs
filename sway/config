@@ -59,24 +59,6 @@ seat seat0 xcursor_theme $cursor_theme $cursor_size
     client.urgent           $orange $orange   $white1 $orange
 #Note: border=background because  its works so. border param is useless, ugly bastard.
 
-### Правила приложений
-#
-# (W-1)
-
-# (W-2)
-assign [app_id="(?i).*$browser.*"] $ws2
-
-# (W-3)
-assign [class="(?i).*libreoffice.*"] $ws3
-assign [app_id="(?i).*libreoffice.*"] $ws3
-
-# (W-4)
-assign [app_id="(?i).*mpv.*"] $ws4
-assign [app_id="(?i).*pcmanfm.*"] $ws4
-
-# (W-5)
-assign [app_id="(?i).*telegram.*"] $ws5
-assign [class="(?i).*discord.*"] $ws5
 
 ### Автозапуск приложений
 #

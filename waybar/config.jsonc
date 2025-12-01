@@ -86,16 +86,16 @@
     },
     "clock": {
         // "timezone": "America/New_York",
-        "interaval":60,
         "tooltip":false,
         "format": "{:%Y-%m-%d | %H:%M}"
     },
     "cpu": {
-        "interaval":1,
+        "interval":1,
         "format": "cpu:{usage}%",
         "tooltip": false
     },
     "memory": {
+        "interval":3,
         "format": "mem:{}%"
     },
     "backlight": {
@@ -121,6 +121,7 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "interval":3,
         "format-wifi": "net:{essid}({signalStrength}%) {bandwidthDownBits}",
         "format-ethernet": "eth-net:{ipaddr}/{cidr}",
         "format-linked": "{ifname} (No IP)",
