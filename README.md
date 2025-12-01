@@ -27,6 +27,13 @@ systemctl --user enable pipewire-pulse.service
 systemctl --user start pipewire-pulse.service
 ```
 
+## Screenshot
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bc2f6761-4725-471c-85c5-a45ef190a91b" />
+locked screen
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ec55e285-ea51-439d-b715-e29320ce1135" />
+
+
+
 ## Colorsheme
 ### black #1c1c1c
 uses for backgorund
