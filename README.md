@@ -14,6 +14,9 @@ sudo pacman -S wl-clipboard unzip
 ```bash
 sudo pacman -S waybar otf-font-awesome ttf-jetbrains-mono-nerd pipewire pipewire-pulse pipewire-jack pavucontrol adw-gtk-theme adwaita-icon-theme lxqt-openssh-askpass wofi libnotify upower
 ```
+## instalation
+move this wolders to your .config,
+but for custom folder read README, its in custom folder
 
 ## Pipewire
 start and enable pipewire:
@@ -23,9 +26,6 @@ systemctl --user start pipewire.service
 systemctl --user enable pipewire-pulse.service
 systemctl --user start pipewire-pulse.service
 ```
-
-also see instalation.md in custom for custom settings as powermenu and env variables
-
 
 ## Colorsheme
 ### black #1c1c1c
