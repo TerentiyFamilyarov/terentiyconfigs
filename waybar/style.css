@@ -31,8 +31,8 @@
 
 window#waybar {
   background: @black;
-  font-family: IosevkaTerm Nerd Font Propo;
-  font-size: 12pt;
+  font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", monospace;
+  font-size: 11pt;
   font-weight: 900;
   color: @white;
 }

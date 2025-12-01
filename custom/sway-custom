@@ -1,9 +1,11 @@
 #!/bin/bash
 
 # Базовые
+export LANG=ru_RU.UTF-8
+export LC_ALL=ru_RU.UTF-8
 export EDITOR="nvim"
+#export ViSUAL="nvim"
 export BROWSER="firefox" 
-export TERMINAL="foot"
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=sway
 
@@ -37,8 +39,6 @@ export WINIT_UNIX_BACKEND="wayland"
 # PipeWire
 export PIPEWIRE_LATENCY="128/48000"
 
-# Спец опции для приложений
-export TELEGRAM_WINDOW_OPTIONS="noborder"
 
 # Запуск sway
 exec sway

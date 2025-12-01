@@ -1,23 +1,26 @@
 #!/bin/bash
 
-options="Завершение сеанса\nПерезагрузка\nВыключение\nСпящий режим\nБлокировка"
+options="LogOut\nReboot\nPoweroff\nSuspend\nLock"
 
-selected=$(echo -e "$options" | wofi --dmenu --prompt="Действие:")
+selected=$(echo -e "$options" | wofi --dmenu --prompt="Action:")
 
 case $selected in
-    "Завершение сеанса")
+    "LogOut")
         swaymsg exit
         ;;
-    "Перезагрузка")
+    "Reboot")
         systemctl reboot
         ;;
-    "Выключение")
+    "Poweroff")
         systemctl poweroff
         ;;
-    "Спящий режим")
-        systemctl suspend
+    "Suspend")
+        systemctl suspend && swaylock
         ;;
-    "Блокировка")
-        swaylock --config ~/.config/swaylock/config
+    "Lock")
+        swaylock
+        ;;
+    *)
+        exit 1
         ;;
 esac
