@@ -17,6 +17,7 @@ exec_always ~/.local/bin/batterynotify 20 30
 # Your preferred terminal emulator
   set $term foot
   set $browser firefox
+  set $filemanager pcmanfm
 # Your preferred application launcher
   set $menu wofi --show drun
 # GTK theme settings
@@ -63,6 +64,7 @@ seat seat0 xcursor_theme $cursor_theme $cursor_size
 ### Автозапуск приложений
 #
 exec swaymsg "workspace $ws2; exec $browser"
+exec swaymsg "workspace $ws4; exec $filemanager"
 exec swaymsg "workspace $ws5; exec org.telegram.desktop"
 exec swaymsg "workspace $ws1; exec $term"
 
@@ -180,7 +182,6 @@ exec swaymsg "workspace $ws1; exec $term"
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
-
     # Swap focus between the tiling area and the floating area
     bindsym $mod+space focus mode_toggle
 
