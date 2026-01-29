@@ -1,0 +1,110 @@
+#!/bin/bash
+
+##kill clones
+ME=$$
+
+# kill all clone bastards
+for pid in $(pgrep -f "batterynotify"); do
+    if [ "$pid" -ne "$ME" ]; then
+        kill "$pid" 2>/dev/null
+    fi
+done
+##kill clones end
+
+
+STATE_FILE=/tmp/custom_no_bat_device_notify
+
+critical_charge=$1
+low_charge=$2
+
+load_state() {
+    if [ -f "$STATE_FILE" ]; then
+        source "$STATE_FILE"
+    else
+        # Значения по умолчанию
+        NULL_INFO_NOTIFIED=false
+        NO_BAT_NOTIFIED=false
+    fi
+}
+save_state() {
+    cat > "$STATE_FILE" << EOF
+NULL_INFO_NOTIFIED=$NULL_INFO_NOTIFIED
+NO_BAT_NOTIFIED=$NO_BAT_NOTIFIED
+EOF
+}
+
+# Загрузка переменных
+load_state
+CRITICAL_NOTIFIED=false
+LOW_NOTIFIED=false
+
+# Функция для получения информации о батарее
+get_battery_info() {
+    local battery_device=$(upower -e | grep battery | head -1)
+    
+    if [ -z "$battery_device" ] && [ "$NO_BAT_NOTIFIED" = "false" ]; then
+        echo "Error: No battery device found" >&2
+        notify-send -u critical "Error: No bat device" "$(pwd)"
+        NO_BAT_NOTIFIED=true
+        return 1
+    fi
+    
+    upower -i "$battery_device"
+}
+
+while true; do
+    battery_info=$(get_battery_info 2>/dev/null)
+    
+    if [ $? -ne 0 ] || [ -z "$battery_info" ]; then
+        echo "Error: Could not get battery information" >&2
+        notify-send -u critical "Error: null bat info" "$(pwd)"
+        sleep 60
+        continue
+    fi
+    
+    
+    # Парсим данные из upower
+    battery_state=$(echo "$battery_info" | grep -E "state:\s+" | awk '{print $2}')
+    battery_percent=$(echo "$battery_info" | grep -E "percentage:\s+" | awk '{print $2}' | tr -d '%')
+    
+    # echo "${battery_state} ${battery_percent}"
+
+    # Проверка на пустые значения 
+    if [ -z "$battery_percent" ] || [ -z "$battery_state" ]; then
+        notify-send -u critical "Error: zero values" "check batterynotify"
+        exit 0
+    fi
+
+
+    case "$battery_state" in
+        "charging")
+            if [ $CRITICAL_NOTIFIED ] || [ "$LOW_NOTIFIED" = "true" ]; then
+              CRITICAL_NOTIFIED=false
+              LOW_NOTIFIED=false
+            fi
+        ;;
+        "discharging")
+            if [ "$battery_percent" -le "$critical_charge" ] && [ "$CRITICAL_NOTIFIED" = "false" ]; then
+                notify-send -u critical "!critical!" "!bat: ${battery_percent}%!"
+                CRITICAL_NOTIFIED=true
+
+            elif [ "$battery_percent" -le "$low_charge" ] && [ "$LOW_NOTIFIED" = "false" ]; then
+                notify-send -u low "low battery" "bat: ${battery_percent}%"
+                LOW_NOTIFIED=true
+            fi
+
+            #Сбрасываем флаги если уровень вышел за пороги
+            if [ "$battery_percent" -gt "$low_charge" ]; then
+                LOW_NOTIFIED=false
+            fi
+            if [ "$battery_percent" -gt "$critical_charge" ]; then
+                CRITICAL_NOTIFIED=false
+            fi
+        ;;
+    esac
+
+
+    sleep 60
+
+
+done

@@ -1,0 +1,141 @@
+{
+    "position": "top", 
+    "height": 30, 
+    "max-height": 30, 
+    "spacing": 4, // Gaps between modules (4px)
+    "modules-left": [
+        "sway/workspaces",
+        "tray",
+        "sway/scratchpad",
+        "sway/mode"
+    ],
+    "modules-center": [
+        "clock",
+        "sway/language"
+
+    ],
+    "modules-right": [
+        // "mpd",
+        "network",
+        "cpu",
+        "memory",
+        "pulseaudio",
+        "backlight",
+        "battery",
+        "battery#bat2"
+    ],
+    
+
+    // Modules configuration
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+          "1": "",  
+          "2": "",  
+          "3": "",
+          "4": "",
+          "5": "",
+          "6": "6",
+          "7": "7",
+          "8": "8",
+          "9": "9",
+          "10": "10"
+        }
+    },
+ 
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/scratchpad": {
+        "format": "min:{count}",
+        "show-empty": false,
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    // "mpd": {
+    //     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+    //     "format-disconnected": "Disconnected ",
+    //     "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    //     "unknown-tag": "N/A",
+    //     "interval": 5,
+    //     "consume-icons": {
+    //         "on": " "
+    //     },
+    //     "random-icons": {
+    //         "off": "off",
+    //         "on": " "
+    //     },
+    //     "repeat-icons": {
+    //         "on": " "
+    //     },
+    //     "single-icons": {
+    //         "on": "1 "
+    //     },
+    //     "state-icons": {
+    //         "paused": "",
+    //         "playing": ""
+    //     },
+    //     "tooltip-format": "MPD (connected)",
+    //     "tooltip-format-disconnected": "MPD (disconnected)"
+    // },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip":false,
+        "format": "{:%Y-%m-%d | %a | %H:%M}"
+    },
+    "cpu": {
+        "interval":1,
+        "format": "cpu:{usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "interval":3,
+        "format": "mem:{}%"
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "bright:{percent}%"
+    },
+    "battery": {
+        "states": {
+            "full": 99,
+            "good": 79,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "bat:{capacity}%",
+        "format-full": "full-bat:{capacity}%",
+        "format-charging": "bat++:{capacity}%",
+        "format-plugged": "ac-bat:{capacity}%",
+        "format-alt": "time-bat:{time}"
+
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "interval":3,
+        "format-wifi": "net:{essid}({signalStrength}%)",
+        "format-ethernet": "eth-net:{ipaddr}/{cidr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "net:!disconnected!",
+        "format-alt": "{ifname}: {bandwidthDownBits}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "vol:{volume}% | {format_source}",
+        "format-bluetooth": "bluezvol:{volume}%",
+        "format-bluetooth-muted": "bluezvol:0%",
+        "format-muted": "vol:0% | {format_source}",
+        "format-source": "mic:{volume}%",
+        "format-source-muted": "mic:0%",
+        "on-click": "pavucontrol"
+    }
+}

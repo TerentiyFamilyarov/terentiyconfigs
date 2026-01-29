@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Базовые
+export LANG=ru_RU.UTF-8
+export LC_ALL=ru_RU.UTF-8
+export EDITOR="nvim"
+#export ViSUAL="nvim"
+export BROWSER="firefox" 
+export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=sway
+
+# Запрос прав (важно!)
+export SUDO_ASKPASS="/usr/bin/lxqt-openssh-askpass"  # или другой совместимый askpass
+
+# Темы
+export GTK_THEME="Adwaita:dark"
+export FLATPAK_ENABLE_SDK_EXT=*
+
+# Wayland
+export QT_QPA_PLATFORM="wayland"
+export MOZ_ENABLE_WAYLAND=1
+export GDK_BACKEND="wayland"
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export CLUTTER_BACKEND="wayland"
+
+# Графика
+export SDL_VIDEODRIVER="wayland"
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# OpenGL
+export WLR_RENDERER="vulkan"  # или "gles2"
+
+# SDL (игры)
+export SDL_AUDIODRIVER="pipewire"
+
+# Wine
+export WINIT_UNIX_BACKEND="wayland"
+
+# PipeWire
+export PIPEWIRE_LATENCY="128/48000"
+
+
+# Запуск sway
+exec sway

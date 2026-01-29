@@ -1,0 +1,26 @@
+#!/bin/bash
+
+options="LogOut\nReboot\nPoweroff\nSuspend\nLock"
+
+selected=$(echo -e "$options" | wofi --dmenu --prompt="Action:" --sort-order=default)
+
+case $selected in
+    "Lock")
+        swaylock
+        ;;
+    "LogOut")
+        swaymsg exit
+        ;;
+    "Suspend")
+        systemctl suspend && swaylock
+        ;;
+    "Poweroff")
+        systemctl poweroff
+        ;;
+    "Reboot")
+        systemctl reboot
+        ;;
+    *)
+        exit 1
+        ;;
+esac

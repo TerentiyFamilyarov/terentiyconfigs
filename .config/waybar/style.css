@@ -1,0 +1,130 @@
+@define-color black #1c1c1c;
+@define-color lightblack #262626;
+@define-color gray #4e4e4e;
+@define-color gray1 #686868;
+@define-color gray2 #b8b8b8;
+@define-color white1 #e8e8e8;
+@define-color white #fafafa;
+@define-color yellow #d7af87;
+@define-color orange #cc9057;
+@define-color red #c4746e;
+@define-color magenta #a58aac;
+@define-color blue #8aacbd;
+@define-color cyan #4a716e;
+@define-color green #89b379;
+
+
+
+
+
+
+
+* {
+  padding: 0;
+  min-height: 0;
+  margin: 0;
+  text-shadow: none;
+  transition: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+window#waybar {
+  background: @black;
+  font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", monospace;
+  font-size: 11pt;
+  font-weight: 900;
+  color: @white;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  padding: 3pt;
+  background: @black;
+}
+
+.modules-left {padding-left:0}
+.modules-right {padding-right:0}
+
+#window,
+#workspaces button,
+#tray,
+#mode,
+#cpu,
+#backlight,
+#memory,
+#pulseaudio,
+#pulseaudio.muted,
+#battery,
+#battery.critical,
+#battery.warning,
+#network,
+#keyboard-state,
+#language,
+#scratchpad,
+#clock {
+  border: 2pt solid @gray;
+  color: @white1;
+  background: @lightblack;
+  padding-right: 4.5pt;
+  padding-left: 4.5pt;
+}
+
+#workspaces button:hover,
+#battery:hover,
+#pulseaudio:hover,
+#network:hover{
+  background: @gray;
+  border-color: @cyan;
+}
+
+#workspaces button.visible,
+#workspaces button.visible:hover,
+#workspaces button.active,
+#workspaces button.active:hover {
+  color: @black;
+  background: @gray2;
+  border-color: @white1;
+}
+
+#tray {
+  background-color: @gray;
+  border-color: @gray1;
+}
+
+
+/* statuses */
+
+
+#workspaces button.urgent {
+  border-color: @orange;
+}
+
+#pulseaudio.muted,
+#pulseaudio.zero{
+  border-color: @yellow;
+}
+#pulseaudio.high {
+  border-color: @orange;
+}
+
+#battery.critical {
+  border-color: @red;
+}
+#battery.warning {
+  border-color: @orange;
+}
+#battery.charging {
+  border-color: @green;
+}
+#battery.full {
+  border-color: @magenta;
+}
+
+#network.disconnected {
+  border-color: @red;
+}
+#network.lincked {
+  border-color: @orange;
+}
