@@ -16,11 +16,7 @@ sudo pacman -S stow wl-clipboard unzip waybar otf-font-awesome ttf-jetbrains-mon
 - ```stow .```
 
 ### install apps(not required)
-**imageviever** **filemanager** **texteditor** **archivetool**  **consoletexteditor**
-gpicview    pcmanfm     geany      engrampa     nvim             
-
-**calculator**  **paint**       **office**
-calc        pinta       libreoffice-fresh       
+gpicview(imageviever) pcmanfm(filemananger) geany(texteditor) engrampa(archivetool) nvim(consletexteditor) calc(calculator) pinta(paint) libreoffice-fress(office)
 ```bash
 sudo pacman -S gpicview pcmanfm geany engrampa nvim calc pinta libreoffice-fresh firefox
 ```
