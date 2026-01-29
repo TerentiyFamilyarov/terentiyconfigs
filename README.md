@@ -89,6 +89,6 @@ selected item border
 ### cyan #4a716e
 active window
 
-###### green #89b379
+### green #89b379
 good, charging bat
 
