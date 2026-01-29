@@ -5,6 +5,7 @@ i use us,ru langs, so add this in /etc/locale.gen and run
 sudo locale-gen
 ``` 
 
+
 ## Instalation:
 ### install
 ```bash
@@ -16,9 +17,19 @@ sudo pacman -S stow wl-clipboard unzip waybar otf-font-awesome ttf-jetbrains-mon
 - ```stow .```
 
 ### install apps(not required)
-gpicview(imageviever) pcmanfm(filemananger) geany(texteditor) engrampa(archivetool) nvim(consletexteditor) calc(calculator) pinta(paint) libreoffice-fress(office)
+gpicview(imageviever) pcmanfm(filemananger) geany(texteditor) engrampa(archivetool) nvim(consletexteditor) calc(calculator) pinta(paint) libreoffice-fresh(office) firefox(browser)
 ```bash
 sudo pacman -S gpicview pcmanfm geany engrampa nvim calc pinta libreoffice-fresh firefox
+```
+
+
+## Pipewire
+start and enable pipewire:
+```bash
+systemctl --user enable pipewire.service
+systemctl --user start pipewire.service
+systemctl --user enable pipewire-pulse.service
+systemctl --user start pipewire-pulse.service
 ```
 
 
@@ -32,29 +43,10 @@ sudo pacman -S wl-clipboard unzip
 sudo pacman -S waybar otf-font-awesome ttf-jetbrains-mono-nerd pipewire pipewire-pulse pipewire-jack pavucontrol adw-gtk-theme adwaita-icon-theme lxqt-openssh-askpass wofi upower mako libnotify grim slurp brightnessctl
 ```
 ### apps
-apps for: imageviewer fliemanager texteditor arhivetool tuicodeeditor calculator paint office browser 
+gpicview(imageviever) pcmanfm(filemananger) geany(texteditor) engrampa(archivetool) nvim(consletexteditor) calc(calculator) pinta(paint) libreoffice-fresh(office) firefox(browser)
 ```bash
 sudo pacman -S gpicview pcmanfm geany engrampa nvim calc pinta libreoffice-fresh firefox
 ```
-
-## instalation
-move this wolders to your .config,
-but for custom folder read README, its in custom folder
-
-## Pipewire
-start and enable pipewire:
-```bash
-systemctl --user enable pipewire.service
-systemctl --user start pipewire.service
-systemctl --user enable pipewire-pulse.service
-systemctl --user start pipewire-pulse.service
-```
-
-## Screenshot
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bc2f6761-4725-471c-85c5-a45ef190a91b" />
-locked screen
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ec55e285-ea51-439d-b715-e29320ce1135" />
-
 
 
 ## Colorsheme
